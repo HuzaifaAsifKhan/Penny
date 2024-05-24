@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3>Register</h3>
+        <hr />
+        <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+            <fieldset [disabled]="isSubmitting">
+           
+                <div class="mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" formControlName="username"/>
+                    <div class="invalid-feedbackk">
+                        {{ showErrors('username')}}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" formControlName="password"/>
+                    <div class="invalid-feedbackk">
+                        {{ showErrors('password')}}
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Signup</button>
+                    <button type="submit" style="float: right;" class="mx-3 btn btn-primary" [routerLink]="['/auth/login']">Go to Login</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

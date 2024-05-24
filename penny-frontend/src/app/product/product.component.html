@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-8">
+        <h3>Products Listing ({{count$ | async }})</h3>
+        <div>
+            <a class="btn btn-primary" [routerLink]="['add']">Add Product </a>
+        </div>
+        <table class="table table-striped"> 
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products$ | async">
+                    <td>
+                        {{ product.id }}
+                    </td>
+                    <td>
+                        {{ product.title | titlecase }}
+                    </td>
+                    <td>
+                        {{ product.description | titlecase }}
+                    </td>
+                    <td>
+                        <a class="btn btn-danger mx-1" (click)="deleteProduct(product.id)">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-4">
+        <router-outlet />
+    </div>
+</div>

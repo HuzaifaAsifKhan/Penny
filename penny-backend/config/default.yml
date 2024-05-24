@@ -1,0 +1,22 @@
+server:
+  port: 3000
+
+db:
+  type: "postgres"
+  port: 5432
+  database: "postgres"
+  host: "localhost"
+  username: "postgres"
+  password: "mysecretpassword"
+  synchronize: false
+
+jwt:
+  expiresIn: 28800
+  secret: "topSecret51"
+
+
+
+
+
+  # docker run --name postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
+  # postgres://postgres:mysecretpassword@localhost:5432/postgres
